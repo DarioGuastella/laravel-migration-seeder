@@ -12,7 +12,7 @@ class PageController extends Controller
     {
         // $risposta = config("data");
         $dati = [
-            "treni" => Train::all()
+            "treni" => Train::where("arrival", "like",  "08%")->get()
         ];
 
         return view('home', $dati);
