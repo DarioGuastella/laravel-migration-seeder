@@ -2,32 +2,34 @@
 
 @section('content')
     <h1>Treni</h1>
-    <ul>
-        @foreach ($treni as $treno)
+
+    @foreach ($treni as $treno)
+        <ul>
+            <span>Treno numero: {{ $treno->id }}</span>
             <li>
-                <span>{{ $treno->company }}</span>
+                <span>Azienda: {{ $treno->company }}</span>
             </li>
             <li>
-                <span>{{ $treno->start }}</span>
+                <span>Stazione di partenza: {{ $treno->start }}</span>
             </li>
             <li>
-                <span>{{ $treno->end }}</span>
+                <span>Stazione di arrivo: {{ $treno->end }}</span>
             </li>
             <li>
-                <span>{{ $treno->departure }}</span>
+                <span>Orario di partenza: {{ $treno->departure }}</span>
             </li>
             <li>
-                <span>{{ $treno->arrival }}</span>
+                <span>Orario di arrivo: {{ $treno->arrival }}</span>
             </li>
             <li>
-                <span>{{ $treno->train_code }}</span>
+                <span>Codice treno: {{ $treno->train_code }}</span>
             </li>
             <li>
-                <span>{{ $treno->is_on_time }}</span>
+                <span>In orario: {{ $treno->is_on_time ? 'Si' : 'No' }}</span>
             </li>
             <li>
-                <span>{{ $treno->is_late }}</span>
+                <span>Cancellato: {{ $treno->is_late === 0 ? 'No' : 'Si' }}</span>
             </li>
-        @endforeach
-    </ul>
+        </ul>
+    @endforeach
 @endsection
